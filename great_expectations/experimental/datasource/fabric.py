@@ -186,7 +186,7 @@ class PowerBIDax(_PowerBIAsset):
 
     type: Literal["powerbi_dax"] = "powerbi_dax"
     dax_string: str
-    pandas_convert_dtypes: bool = True
+    #pandas_convert_dtypes: bool = True #Removed from sempy API
 
 
 @public_api
@@ -201,7 +201,7 @@ class PowerBIMeasure(_PowerBIAsset):
     filters: Optional[Dict[str, List[str]]] = None
     fully_qualified_columns: Optional[bool] = None
     num_rows: Optional[int] = None
-    pandas_convert_dtypes: bool = True
+    #pandas_convert_dtypes: bool = True #Removed from sempy API
     use_xmla: bool = False
 
 
@@ -216,7 +216,7 @@ class PowerBITable(_PowerBIAsset):
     fully_qualified_columns: bool = False
     num_rows: Optional[int] = None
     multiindex_hierarchies: bool = False
-    pandas_convert_dtypes: bool = True
+    #pandas_convert_dtypes: bool = True #Removed from sempy API
 
 
 # This improves our error messages by providing a more specific type for pydantic to validate against
@@ -299,7 +299,7 @@ class FabricPowerBIDatasource(Datasource):
         dax_string: str,
         order_by: Optional[SortersDefinition] = None,
         batch_metadata: Optional[BatchMetadata] = None,
-        pandas_convert_dtypes: bool = True,
+        #pandas_convert_dtypes: bool = True, #Removed from sempy API
     ) -> PowerBIDax:
         """Adds a PowerBIDax asset to this datasource.
 
@@ -318,7 +318,7 @@ class FabricPowerBIDatasource(Datasource):
             order_by=order_by_sorters,
             batch_metadata=batch_metadata or {},
             dax_string=dax_string,
-            pandas_convert_dtypes=pandas_convert_dtypes,
+            #pandas_convert_dtypes=pandas_convert_dtypes, #Removed from sempy API
         )
         return self._add_asset(asset)
 
@@ -333,7 +333,7 @@ class FabricPowerBIDatasource(Datasource):
         filters: Optional[Dict[str, List[str]]] = None,
         fully_qualified_columns: Optional[bool] = None,
         num_rows: Optional[int] = None,
-        pandas_convert_dtypes: bool = True,
+        #pandas_convert_dtypes: bool = True, #Removed from sempy API
         use_xmla: bool = False,
     ) -> PowerBIMeasure:
         """Adds a PowerBIMeasure asset to this datasource.
@@ -357,7 +357,7 @@ class FabricPowerBIDatasource(Datasource):
             filters=filters,
             fully_qualified_columns=fully_qualified_columns,
             num_rows=num_rows,
-            pandas_convert_dtypes=pandas_convert_dtypes,
+            #pandas_convert_dtypes=pandas_convert_dtypes, #Removed from sempy API
             use_xmla=use_xmla,
         )
         return self._add_asset(asset)
@@ -372,7 +372,7 @@ class FabricPowerBIDatasource(Datasource):
         fully_qualified_columns: bool = False,
         num_rows: Optional[int] = None,
         multiindex_hierarchies: bool = False,
-        pandas_convert_dtypes: bool = True,
+        #pandas_convert_dtypes: bool = True, #Removed from sempy API
     ) -> PowerBITable:
         """Adds a PowerBITable asset to this datasource.
 
@@ -395,7 +395,7 @@ class FabricPowerBIDatasource(Datasource):
             fully_qualified_columns=fully_qualified_columns,
             num_rows=num_rows,
             multiindex_hierarchies=multiindex_hierarchies,
-            pandas_convert_dtypes=pandas_convert_dtypes,
+            #pandas_convert_dtypes=pandas_convert_dtypes, #Removed from sempy API
         )
         return self._add_asset(asset)
 
